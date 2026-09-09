@@ -1,3 +1,5 @@
+// Mirror note: a test whose setup lives in a skipped test is skipped too; it would
+// otherwise run without the environment that test provides.
 // Mirror note: tests that need a signed Pro key are skipped here. The signing key
 // lives only in the monorepo (keys/license-private.pem); run them there.
 // Mirror note: tests that run a script from the monorepo's scripts/ directory are
@@ -60,7 +62,8 @@ test.skip("two processes, one data dir: 40 concurrent contacts_set all persist",
   const { execFileSync } = await import("node:child_process");
   const REPO = join(here, "..");
   // Pro, so the free 5-contact cap is not what is being measured here.
-  process.env.CONC_KEY = "";
+  process.env.CONC_KEY = execFileSync(process.execPath,
+    [join(REPO, "scripts", "sign-license.mjs"), "timezone"], { encoding: "utf8" }).trim();
 
   const sandbox = mkdtempSync(join(tmpdir(), "mcp-tz-conc-"));
   const dataHome = join(sandbox, "data");

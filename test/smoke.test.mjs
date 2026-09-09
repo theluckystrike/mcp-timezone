@@ -128,7 +128,7 @@ test("stdio: initialize, tools/list, convert_time known answer", async (t) => {
   assert.match(bd.text, /21 business day\(s\) of 30 calendar day\(s\)/);
 });
 
-test.skip("find_meeting_slots: 3 participants, every slot inside every window", async (t) => {
+test("find_meeting_slots: 3 participants, every slot inside every window", async (t) => {
   const c = client();
   t.after(() => c.close());
   await init(c);
