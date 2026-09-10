@@ -2,7 +2,7 @@
 
 <!-- mirror-seo:start -->
 
-**MCP server for timezone conversion and meeting planning across time zones.** Find meeting slots inside everyone's working hours.
+**MCP server for timezone conversion and meeting planning: schedule a meeting across time zones.** Find meeting slots inside everyone's working hours.
 
 Works with Claude Desktop, Claude Code, Cursor and any Model Context Protocol client. Runs on your own machine, or hosted with no install.
 
