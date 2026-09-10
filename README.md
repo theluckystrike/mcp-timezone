@@ -1,13 +1,45 @@
 # mcp-timezone
 
+<!-- mirror-seo:start -->
+
+**MCP server for timezone conversion and meeting planning across time zones.** Find meeting slots inside everyone's working hours.
+
+Works with Claude Desktop, Claude Code, Cursor and any Model Context Protocol client. Runs on your own machine, or hosted with no install.
+
+## Install
+
+**Hosted, nothing to install.** Point an MCP client at `https://mcp.zovo.one/mcp/timezone` over streamable-http and send `Authorization: Bearer <token>`, where the token is a Pro key or a free anonymous one from <https://mcp.zovo.one/mcp/token>.
+
+**Claude Desktop, one click.** Download `timezone.mcpb` from the [latest release](https://github.com/theluckystrike/mcp-servers/releases/latest) and double-click it.
+
+**From source.** The mirror is self-contained: every `@theluckystrike/*` dependency is vendored, so a fresh clone builds with no extra setup.
+
+```sh
+git clone https://github.com/theluckystrike/mcp-timezone.git
+cd mcp-timezone
+npm install && npm run build
+```
+
+Then point your client at the built entry point:
+
+```json
+{
+  "mcpServers": {
+    "timezone": {
+      "command": "node",
+      "args": ["/absolute/path/to/mcp-timezone/dist/index.js"]
+    }
+  }
+}
+```
+
+> `@theluckystrike/mcp-timezone` is **not published on npm yet**, so an `npx -y @theluckystrike/mcp-timezone` command will fail. The three paths above are the working ones and each is exercised by CI.
+
 ![timezone demo](https://raw.githubusercontent.com/theluckystrike/mcp-servers/main/assets/demo-timezone.gif)
-
-**One-click install:** download `timezone.mcpb` from the [latest release](https://github.com/theluckystrike/mcp-servers/releases/latest) and double-click it in Claude Desktop.
-
-**Hosted endpoint (no install):** `https://mcp.zovo.one/mcp/timezone` (streamable-http; send `Authorization: Bearer <Pro key or anonymous token from https://mcp.zovo.one/mcp/token>`).
 
 Read-only mirror of [mcp-servers/servers/timezone](https://github.com/theluckystrike/mcp-servers/tree/main/servers/timezone). See [MIRROR.md](MIRROR.md).
 
+<!-- mirror-seo:end -->
 
 Work with clients in other countries without doing time zone arithmetic in your head. Ask "what time is it for
 Maria in Lisbon", "convert 3pm Warsaw to New York and Bangalore", or "find an hour next week that works for me,
