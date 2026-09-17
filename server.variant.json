@@ -2,7 +2,7 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.theluckystrike/calendar",
   "description": "Time zone and calendar helper: meeting slots across countries, DST checks, .ics invites.",
-  "version": "0.21.0",
+  "version": "0.22.0",
   "repository": {
     "url": "https://github.com/theluckystrike/mcp-servers",
     "source": "github",
@@ -12,8 +12,8 @@
   "packages": [
     {
       "registryType": "mcpb",
-      "identifier": "https://github.com/theluckystrike/mcp-servers/releases/download/v0.21.0/timezone.mcpb",
-      "version": "0.21.0",
+      "identifier": "https://github.com/theluckystrike/mcp-servers/releases/download/v0.22.0/timezone.mcpb",
+      "version": "0.22.0",
       "transport": {
         "type": "stdio"
       },
@@ -25,7 +25,21 @@
           "isSecret": true
         }
       ],
-      "fileSha256": "bc6d4f8a814354b7c176b9d2a5bb3c51f160d899e7f3cec991a62cd1378db6dc"
+      "fileSha256": "f70084d03b415a60c2c2e5ccfb280814dfc64851ec58caa946286cb9e7e1f63d"
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.zovo.one/mcp/timezone",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Bearer <Pro license key or anonymous token from GET https://mcp.zovo.one/mcp/token>",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
     }
   ]
 }

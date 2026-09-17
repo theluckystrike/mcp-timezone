@@ -1,6 +1,6 @@
 {
   "name": "mcp-timezone",
-  "version": "0.21.0",
+  "version": "0.22.0",
   "description": "MCP server for timezone conversion and meeting planning: schedule a meeting across time zones. Find meeting slots inside everyone's working hours.",
   "settings": [
     {
